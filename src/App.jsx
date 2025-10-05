@@ -1,9 +1,8 @@
-import React from 'react'
-
+import Navbar from "./component/Navbar"
 const App = () => {
   return (
     <div className=''>
-      React Redux-toolKit
+      <Navbar />
     </div>
   )
 }
