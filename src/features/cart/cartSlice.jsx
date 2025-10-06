@@ -18,7 +18,6 @@ const cartSlice = createSlice({
         removeItem:(state,action)=>{
             const itemId = action.payload
             state.cartItems = state.cartItems.filter(item=> item.id !== itemId)
-            console.log("clicked")
         },
         increaseItem:(state,{payload})=>{
             const cartItems = state.cartItems.find(item=> item.id === payload.id)
@@ -31,6 +30,5 @@ const cartSlice = createSlice({
     }
 })
 
-console.log(cartSlice)
 export const{clearCart,removeItem, increaseItem, decreaseItem} = cartSlice.actions
 export default cartSlice.reducer
