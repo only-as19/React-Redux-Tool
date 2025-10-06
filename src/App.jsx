@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Navbar, CartContainer } from "./components"
+import { Navbar, CartContainer,Modal } from "./components"
 import { useSelector, useDispatch } from "react-redux"
 import { totalAmount } from "./features/cart/cartSlice"
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
   },[cartItems])
   return (
     <div className=''>
+      <Modal />
       <Navbar />
       <CartContainer/>
     </div>
