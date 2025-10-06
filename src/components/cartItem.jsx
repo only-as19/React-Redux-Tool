@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { removeItem } from "../features/cart/cartSlice"
+import { removeItem, increaseItem, decreaseItem } from "../features/cart/cartSlice"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 const CartItem = ({id, img, amount, price, title}) => {
   const dispatch = useDispatch()
@@ -17,9 +17,16 @@ const CartItem = ({id, img, amount, price, title}) => {
             className="lowercase font-semibold text-sm tracking-widest text-primary cursor-pointer">Remove</button>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <button><BiChevronUp size={25} className="text-primary"/></button>
+          <button className="cursor-pointer"
+          onClick={()=>{ dispatch(increaseItem({id}))}}>
+            <BiChevronUp size={25} className="text-primary"/>
+          </button>
           <span className="text-lg">{amount}</span>
-          <button><BiChevronDown size={25} className="text-primary"/></button>
+          <button
+          onClick={()=>{ dispatch(decreaseItem({id}))}}
+          className="cursor-pointer">
+            <BiChevronDown size={25} className="text-primary"/>
+          </button>
         </div>
     </article>
   )
