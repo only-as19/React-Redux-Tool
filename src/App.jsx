@@ -1,8 +1,9 @@
-import Navbar from "./component/Navbar"
+import { Navbar, CartContainer } from "./components"
 const App = () => {
   return (
     <div className=''>
       <Navbar />
+      <CartContainer/>
     </div>
   )
 }
