@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux"
-import { removeItem, increaseItem, decreaseItem, clearCart } from "../features/cart/cartSlice"
+import { removeItem, increaseItem, decreaseItem } from "../features/cart/cartSlice"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
-import cartItems from "../data/cartItems"
 const CartItem = ({id, img, amount, price, title}) => {
   const dispatch = useDispatch()
   return (

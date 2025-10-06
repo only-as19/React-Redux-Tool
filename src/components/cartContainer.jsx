@@ -7,7 +7,7 @@ const CartContainer = () => {
     const dispatch = useDispatch()
   if (amount < 1) {
     return (
-      <section className="w-[90vw] mx-auto mt-10">
+      <section className="min-h-[calc(100vh-120px)] w-[90vw] mx-auto mt-10">
         <header className="text-center">
           <h1 className="text-primary-dark text-3xl md:text-4xl font-bold tracking-wider uppercase">
             Your Bag
@@ -21,7 +21,7 @@ const CartContainer = () => {
   }
 
   return (
-    <section className="h-screen w-[90vw] mx-auto mt-10">
+    <section className="w-[90vw] min-h-[calc(100vh-120px)] mx-auto mt-10 py-4">
       <header className="text-center">
         <h1 className="text-primary-dark text-3xl md:text-4xl font-bold tracking-wider uppercase">
           Your Bag
