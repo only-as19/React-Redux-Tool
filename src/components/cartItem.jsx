@@ -1,17 +1,20 @@
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 const CartItem = ({id, img, amount, price, title}) => {
   return (
-    <article>
-        <img src={img} alt={title} />
-        <div>
-            <h2>{title}</h2>
-            <p>${price}</p>
-            <button>Remove</button>
+    <article className="flex justify-between my-8">
+        <img
+        className="h-20 w-20 object-cover"
+        src={img}
+        alt={title} />
+        <div className="mr-auto ml-4">
+            <h4 className="text-primary-dark text-lg font-semibold">{title}</h4>
+            <p className="text-primary-light">${price}</p>
+            <button className="lowercase font-semibold text-sm tracking-widest text-primary">Remove</button>
         </div>
-        <div>
-          <button><BiChevronUp /></button>
-          <span>{amount}</span>
-          <button><BiChevronDown /></button>
+        <div className="flex flex-col justify-center items-center">
+          <button><BiChevronUp size={25} className="text-primary"/></button>
+          <span className="text-lg">{amount}</span>
+          <button><BiChevronDown size={25} className="text-primary"/></button>
         </div>
     </article>
   )
