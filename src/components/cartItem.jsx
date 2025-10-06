@@ -1,5 +1,8 @@
+import { useDispatch } from "react-redux"
+import { removeItem } from "../features/cart/cartSlice"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 const CartItem = ({id, img, amount, price, title}) => {
+  const dispatch = useDispatch()
   return (
     <article className="flex justify-between my-8">
         <img
@@ -9,7 +12,9 @@ const CartItem = ({id, img, amount, price, title}) => {
         <div className="mr-auto ml-4">
             <h4 className="text-primary-dark text-lg font-semibold">{title}</h4>
             <p className="text-primary-light">${price}</p>
-            <button className="lowercase font-semibold text-sm tracking-widest text-primary">Remove</button>
+            <button
+            onClick={()=> dispatch(removeItem(id))}
+            className="lowercase font-semibold text-sm tracking-widest text-primary cursor-pointer">Remove</button>
         </div>
         <div className="flex flex-col justify-center items-center">
           <button><BiChevronUp size={25} className="text-primary"/></button>
